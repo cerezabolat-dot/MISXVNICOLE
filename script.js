@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // 1. CONFIGURACIÓN DEL CONTADOR (COUNTDOWN)
   // ==========================================
   // Fecha del evento: 27 de Junio de 2026 11:00:00 (según tu itinerario)
-  const countdownDate = new Date("June 27, 2026 11:00:00").getTime();
+const countdownDate = new Date(2026, 5, 15, 18, 0, 0).getTime();
 
-  const updateCountdown = () => {
+ const updateCountdown = () => {
     const now = new Date().getTime();
     const distance = countdownDate - now;
 
