@@ -7,123 +7,107 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   color: white;
   overflow-x: hidden;
 
-  /* 📍 CAMBIA AQUÍ EL NOMBRE DE TU IMAGEN DE FONDO GENERAL */
-  background-image: linear-gradient(rgba(11, 89, 99, 0.45), rgba(11, 89, 99, 0.45)), url('fondo.webp');
-  
-  /* Ajustes de cobertura perfecta */
+  background-image:
+    linear-gradient(rgba(11, 89, 99, 0.45), rgba(11, 89, 99, 0.45)),
+    url('fondo.webp');
+
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: #179ba6; /* Respaldo turquesa */
+  background-color: #179ba6;
 }
 
-/* PATRONES MÁGICOS (Destellos sutiles fijos) */
+/* PATRONES */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+
   background-size: 40px 40px;
+
   opacity: 0.4;
+
   pointer-events: none;
+
   z-index: 1;
 }
 
 /* =========================================================
-   2. INTRO ESTILO DISNEY
+   2. INTRO
    ========================================================= */
 .intro {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle, #53d6dc, #1597a5, #0a4f57);
+
+  background:
+    radial-gradient(circle, #53d6dc, #1597a5, #0a4f57);
+
   z-index: 9999;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: introFade 3.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+
+  animation:
+    introFade 3.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 .intro-title {
   font-family: 'Great Vibes', cursive;
   font-size: 6rem;
   color: #fff5d7;
-  text-shadow: 
-    0 0 20px rgba(255, 255, 255, 0.8),
-    0 0 40px rgba(255, 217, 120, 0.6);
+
+  text-shadow:
+    0 0 20px rgba(255,255,255,0.8),
+    0 0 40px rgba(255,217,120,0.6);
+
   animation: glow 2s infinite alternate;
 }
-/* =========================================================
-   📍 CONFIGURACIÓN DE TU TIPOGRAFÍA (IMAGEN) Y SU ENTORNO
-   ========================================================= */
 
-/* Contenedor para centrar la foto del nombre */
-.hero-logo-container {
-  width: 100%;
-  padding: 10px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Ajuste de tamaño para que tu diseño no se deforme */
-.hero-logo {
-  width: 90%;
-  max-width: 310px; /* Evita que se haga gigante en pantallas grandes */
-  height: auto;
-  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.6)); /* Sombra para resaltar las letras */
-}
-
-/* Modificación para el subtítulo "MIS XV AÑOS" */
-.subtitle {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  color: #fff3b0;
-  margin-bottom: 5px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
-}
-
-/* Modificación para la fecha */
-.date {
-  font-family: 'Cinzel', serif;
-  font-weight: 700;
-  font-size: 1.4rem;
-  color: #ffd978;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-  margin-bottom: 12px;
-}
-
-
-/* =========================================================
-   📍 AJUSTE EXACTO PARA CELULARES (BÚSCALO EN @media)
-   ========================================================= */
-@media(max-width: 768px) {
-  /* Agrega esta línea dentro de tu @media actual para encoger el logo en móvil */
-  .hero-logo { 
-    max-width: 230px; 
-  }
-}
 @keyframes introFade {
-  0% { opacity: 1; }
-  85% { opacity: 1; filter: blur(0px); }
-  100% { opacity: 0; filter: blur(10px); visibility: hidden; }
+
+  0% {
+    opacity: 1;
+  }
+
+  85% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+
+  100% {
+    opacity: 0;
+    filter: blur(10px);
+    visibility: hidden;
+  }
 }
 
 @keyframes glow {
-  from { transform: scale(0.98); }
-  to { transform: scale(1.03); }
+
+  from {
+    transform: scale(0.98);
+  }
+
+  to {
+    transform: scale(1.03);
+  }
 }
 
 /* =========================================================
-   3. ESTRUCTURA DE SECCIONES Y TARJETAS GLASS
+   3. SECCIONES
    ========================================================= */
 section {
   padding: 80px 20px;
@@ -131,7 +115,9 @@ section {
   z-index: 2;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Cinzel', serif;
   letter-spacing: 2px;
 }
@@ -141,162 +127,195 @@ h2 {
   color: #ffd978;
   font-size: 2.4rem;
   margin-bottom: 40px;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-}
 
-/* 👑 TARJETAS CRISTAL (GLASSMORPHISM) ESTÁNDAR */
-.glass {
-  background: rgba(11, 55, 61, 0.65); /* Filtro oscuro traslúcido para legibilidad */
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 2px solid rgba(255, 217, 120, 0.35);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  border-radius: 30px; /* Rectángulos redondeados finos para el cuerpo de la página */
-  transition: transform 0.3s ease;
+  text-shadow:
+    0 3px 10px rgba(0,0,0,0.5);
 }
-
 
 /* =========================================================
-   4. 👑 SECCIÓN HERO (CONTENEDOR TOTALMENTE CUADRADO CORREGIDO)
+   GLASS
+   ========================================================= */
+.glass {
+  background: rgba(11, 55, 61, 0.65);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border: 2px solid rgba(255, 217, 120, 0.35);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.4);
+
+  border-radius: 35px;
+
+  transition: all 0.4s ease;
+}
+
+.glass:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 25px 45px rgba(0,0,0,0.45);
+}
+
+/* =========================================================
+   4. HERO
    ========================================================= */
 .hero {
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   padding: 100px 20px 60px 20px;
 }
 
 .hero-content {
   width: 100%;
-  max-width: 460px; /* Ancho estilizado para celulares */
+  max-width: 650px;
+
   padding: 140px 35px 50px 35px;
+
   text-align: center;
   position: relative;
+
+  margin: 0 auto;
+
+  border-radius: 45px !important;
 }
 
-/* Totalmente recto arriba y abajo para que ensamble perfecto con tu marco */
 .hero-arch {
-  border-radius: 0px !important; 
-  border: 2px solid rgba(255, 217, 120, 0.35) !important;
-  border-top: none !important; /* Evita que choque con el borde de tu imagen */
-  overflow: visible !important; 
+  border-radius: 45px !important;
+
+  border:
+    2px solid rgba(255, 217, 120, 0.35) !important;
+
+  border-top: none !important;
+
+  overflow: visible !important;
 }
 
-/* Imagen de tu marco horizontal superior */
 .arch-frame-img {
   position: absolute;
-  top: 0; /* Al ras de la tarjeta cuadrada */
+  top: 0;
   left: 50%;
+
   transform: translateX(-50%);
-  width: 100%; 
-  max-width: 460px;
+
+  width: 100%;
+  max-width: 650px;
+
   z-index: 10;
+
   pointer-events: none;
 }
 
-.hero-inner-content {
-  position: relative;
-  z-index: 2;
+/* =========================================================
+   LOGO
+   ========================================================= */
+.hero-logo-container {
+  width: 100%;
+
+  padding: 10px 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.subtitle {
-  font-size: 1.15rem;
-  letter-spacing: 7px;
-  text-transform: uppercase;
-  color: #fff3b0;
-  margin-bottom: 12px;
-  font-weight: 400;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
-}
+.hero-logo {
+  width: 100%;
+  max-width: 440px;
 
-/* Letras Doradas de "Nicole" */
-.hero h1 {
-  font-family: 'Cinzel', serif;
-  font-size: 4.6rem;
-  font-weight: 700;
-  background: linear-gradient(135deg, #ffeaa7 0%, #ffd978 50%, #d4a326 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.6));
-  margin-bottom: 15px;
-}
+  height: auto;
 
-/* 🟥 EL CUADRADO DORADO BAJO EL NOMBRE */
-.cuadrado-dorado {
-  width: 70px;
-  height: 70px;
-  margin: 20px auto;
-  background: linear-gradient(135deg, #ffeaa7 0%, #ffd978 40%, #d4a326 100%);
-  border: 2px solid #ffffff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255,255,255,0.5);
-  border-radius: 4px;
-}
+  object-fit: contain;
 
-.date {
-  font-family: 'Cinzel', serif;
-  font-size: 1.45rem;
-  color: #ffffff;
-  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-  margin-bottom: 10px;
-}
+  margin: 0 auto;
 
-.location {
-  font-size: 0.95rem;
-  font-weight: 400;
-  color: #fffdec;
-  line-height: 1.8;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  display: block;
 }
-
 
 /* =========================================================
-   5. COMPLEMENTOS INTERNOS (MÚSICA, CONTADOR, SECCIONES)
+   BOTÓN MÚSICA
    ========================================================= */
-
-/* BOTON PLAY MÚSICA */
 #musicBtn {
   margin-top: 35px;
+
   border: none;
+
   padding: 14px 40px;
+
   border-radius: 40px;
-  background: linear-gradient(135deg, #ffffff 0%, #e2f7f8 100%);
+
+  background:
+    linear-gradient(135deg, #ffffff 0%, #e2f7f8 100%);
+
   color: #0b5963;
+
   font-weight: bold;
+
   letter-spacing: 1px;
+
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,0.3);
+
   transition: all 0.3s ease;
 }
 
 #musicBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.4);
 }
 
-/* CONTADOR (COUNTDOWN) */
-.countdown {
+/* =========================================================
+   TAMAÑO UNIFORME
+   ========================================================= */
+.parents-box,
+.countdown,
+.verse-box,
+.event-details-box,
+.dress-box,
+.confirm-box,
+.qr-box,
+.gift-box {
+  width: 100%;
   max-width: 650px;
-  margin: auto;
-  padding: 50px 30px;
+
+  margin: 0 auto;
+
+  padding: 55px 40px;
+}
+
+/* =========================================================
+   COUNTDOWN
+   ========================================================= */
+.countdown {
   display: flex;
   justify-content: center;
   gap: 20px;
+
   flex-wrap: wrap;
+
+  text-align: center;
 }
 
 .countdown span {
   font-family: 'Cinzel', serif;
   font-size: 3rem;
+
   color: #ffd978;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
 
-/* TEXTO / VERSÍCULO */
+/* =========================================================
+   VERSÍCULO
+   ========================================================= */
 .verse-box {
-  max-width: 600px;
-  margin: auto;
-  padding: 60px 40px;
   text-align: center;
   line-height: 2;
   font-size: 1.1rem;
@@ -304,173 +323,320 @@ h2 {
 
 .verse-box span {
   display: block;
+
   margin-top: 20px;
+
   font-family: 'Cinzel', serif;
+
   color: #ffd978;
 }
 
-/* GALERÍA / CAROUSEL HORIZONTAL */
+/* =========================================================
+   PADRES
+   ========================================================= */
+.parents-box {
+  text-align: center;
+}
+
+.parents-box p {
+  line-height: 2;
+  margin-bottom: 25px;
+}
+
+/* =========================================================
+   EVENT DETAILS
+   ========================================================= */
+.event-details-section {
+  display: flex;
+  justify-content: center;
+}
+
+.event-details-box {
+  text-align: center;
+}
+
+.mini-tiara {
+  width: 80px;
+}
+
+.month-title,
+.year-title {
+  font-size: 2rem;
+  letter-spacing: 6px;
+}
+
+.date-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 15px 0;
+}
+
+.date-side {
+  width: 35%;
+
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+
+  padding: 8px 0;
+}
+
+.date-main {
+  width: 30%;
+
+  font-size: 4rem;
+
+  font-family: 'Cinzel', serif;
+}
+
+.geo-icon {
+  font-size: 2rem;
+
+  text-decoration: none;
+
+  display: inline-block;
+}
+
+/* =========================================================
+   GALERÍA
+   ========================================================= */
 .carousel-container {
   width: 85%;
   max-width: 400px;
+
   margin: auto;
+
   border-radius: 25px;
   border: 3px solid #ffd978;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-  overflow: hidden; /* Oculta las fotos que están en fila esperando su turno */
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,0.5);
+
+  overflow: hidden;
+
   position: relative;
 }
 
 .carousel-track {
-  display: flex; /* Alinea las imágenes una al lado de la otra horizontalmente */
+  display: flex;
+
   width: 100%;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Hace el deslizamiento suave */
+
+  transition: transform 1s ease-in-out;
 }
 
 .carousel-track img {
-  width: 100%; /* Cada foto ocupa exactamente el ancho del contenedor */
-  flex-shrink: 0; /* Evita que las fotos se aplasten */
+  width: 100%;
+
+  flex-shrink: 0;
+
   height: 550px;
+
   object-fit: cover;
+
   display: block;
 }
 
-/* Ajuste de tamaño de galería para celulares */
-@media(max-width: 768px) {
-  .carousel-container { max-width: 320px; }
-  .carousel-track img { height: 440px; }
-}
-
 /* =========================================================
-   📍 NUEVOS ESTILOS PARA EL ITINERARIO EN FOTO
+   ITINERARIO
    ========================================================= */
 .timeline-img-container {
-  max-width: 450px;       /* Mismo ancho estético que la tarjeta principal */
-  margin: 0 auto;         /* Centra la tarjeta en la página */
-  padding: 30px 20px;     /* Espaciado interno elegante */
+  max-width: 450px;
+
+  margin: 0 auto;
+
+  padding: 30px 20px;
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .itinerario-foto {
-  width: 100%;            /* Se adapta al ancho de la tarjeta */
-  height: auto;           /* Mantiene la proporción original de la imagen sin estirarse */
+  width: 100%;
+  height: auto;
+
   display: block;
-  filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.4)); /* Le da un realce sutil a los iconos dorados */
 }
 
-/* Ajuste responsivo para pantallas muy pequeñas */
-@media(max-width: 480px) {
-  .timeline-img-container {
-    padding: 20px 10px;   /* Reduce el espacio en móviles pequeños para aprovechar pantalla */
-  }
-}
-/* CÓDIGO DE VESTIMENTA */
+/* =========================================================
+   DRESS CODE
+   ========================================================= */
 .dress-box {
-  max-width: 600px;
-  margin: auto;
-  padding: 60px 40px;
   text-align: center;
 }
 
 .formal {
-  margin: 15px 0 25px 0;
+  margin: 15px 0 35px 0;
+
   font-size: 2rem;
+
   color: #ffffff;
+
   letter-spacing: 5px;
 }
 
-/* BOTONES DE REDIRECCIÓN (QR Y WHATSAPP) */
-.upload-btn {
-  background: linear-gradient(135deg, #ffd978 0%, #f3c46b 100%);
-  color: #0b5963;
+.dresscode-img {
+  width: 100%;
+  max-width: 430px;
+
+  margin: 0 auto 30px auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+.dress-note {
+  line-height: 1.9;
+  font-size: 1.05rem;
+
+  color: #fffdf5;
+
+  max-width: 500px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   CONFIRMACIÓN
+   ========================================================= */
+
+.confirm-box {
+  text-align: center;
+}
+
+.confirm-box p {
+  text-align: center;
+
+  margin-bottom: 15px;
+
+  line-height: 1.8;
 }
 
 .whatsapp-btn {
-  background: #25D366;
-  color: white;
-}
+  display: inline-flex;
 
-.upload-btn, .whatsapp-btn {
-  display: inline-block;
+  justify-content: center;
+  align-items: center;
+
   padding: 14px 35px;
+
   border-radius: 40px;
+
   text-decoration: none;
+
   font-weight: bold;
-  margin-top: 20px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+  margin: 20px auto 0 auto;
+
+  background:
+    linear-gradient(135deg, #25D366, #128C7E);
+
+  color: white;
+
+  box-shadow:
+    0 5px 15px rgba(0,0,0,0.3);
+
+  transition: all 0.3s ease;
 }
 
-.qr-box, .confirm-box {
-  max-width: 600px;
-  margin: auto;
-  padding: 50px 40px;
+.whatsapp-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   LLUVIA DE SOBRES
+   ========================================================= */
+.gift-box {
   text-align: center;
 }
 
-.qr {
-  width: 160px;
-  margin: 20px 0;
-  border: 3px solid #ffd978;
-  padding: 8px;
-  background: white;
-  border-radius: 10px;
+.gift-box h2 {
+  margin-bottom: 20px;
 }
 
-/* FOOTER */
+.gift-text {
+  line-height: 2;
+  font-size: 1.05rem;
+
+  text-align: center;
+
+  max-width: 500px;
+
+  margin: 0 auto;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
 footer {
   padding: 50px 20px;
+
   text-align: center;
+
   color: #fff3b0;
 }
 
-/* ANIMACIÓN PARTICULAS TRASSERAS */
+/* =========================================================
+   DESTELLOS
+   ========================================================= */
 .sparkles::before {
   content: "";
+
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 217, 120, 0.4) 1px, transparent 1px);
+
+  background-image:
+    radial-gradient(rgba(255, 217, 120, 0.4) 1px, transparent 1px);
+
   background-size: 50px 50px;
+
   opacity: 0.3;
+
   animation: sparkle 10s linear infinite;
+
   pointer-events: none;
+
   z-index: 1;
 }
 
 @keyframes sparkle {
-  from { transform: translateY(0); }
-  to { transform: translateY(-50px); }
+
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-50px);
+  }
 }
 
 /* =========================================================
-   6. RESPONSIVE MÓVIL (AJUSTES PANTALLAS CHICAS)
+   RESPONSIVE
    ========================================================= */
 @media(max-width: 768px) {
-  .hero h1 { font-size: 3.4rem; }
-  .intro-title { font-size: 3.5rem; }
-  .carousel img { height: 460px; }
-  
-  /* Mantienen bordes curvos el resto de las tarjetas, excepto el hero */
-  .glass { border-radius: 25px; } 
-  
-  .hero-content { 
-    padding-top: 120px; 
-    padding-left: 20px; 
-    padding-right: 20px; 
+
+  .intro-title {
+    font-size: 3.5rem;
   }
-  
-  .hero-arch { 
-    border-radius: 0px !important; /* Se mantiene perfectamente cuadrado en cel */
+
+  .hero-content {
+    padding-top: 120px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  
-  .arch-frame-img { 
-    top: 0; 
-    width: 100%; 
+
+  .hero-logo {
+    max-width: 240px;
   }
-  
-  .cuadrado-dorado { 
-    width: 55px; 
-    height: 55px; 
+
+  .carousel-track img {
+    height: 440px;
+  }
+
+  .glass {
+    border-radius: 25px;
   }
 }
