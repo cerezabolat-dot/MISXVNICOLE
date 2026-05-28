@@ -12,10 +12,11 @@
 </head>
 <body>
 
-  div class="intro">
+  <div class="intro">
     <div class="intro-stars"></div>
     <h1 class="intro-title">Nicole</h1>
   </div>
+
   <div class="sparkles"></div>
 
   <section class="hero">
@@ -23,28 +24,54 @@
       
       <img src="marcoarabe.png" class="arch-frame-img" alt="Marco Árabe">
 
-   <div class="hero-inner-content">
-      <p class="subtitle">Mis XV Años</p>
-      
-      <div class="hero-logo-container">
-        <img src="logo.png" class="hero-logo" alt="Nicole">
-      </div>
-      
-      <div class="cuadrado-dorado"></div>
-      <p class="date">27 de Junio 2026</p>
-        <p class="location">
-          Granja 77, Residencial San Jorge Yumar <br>
-          Zona 6 de Mixco
-        </p>
+        
+        <div class="hero-logo-container">
+          <img src="logo.png" class="hero-logo" alt="Nicole">
+        </div>
+        
         <button id="musicBtn">✨ Dale Play</button>
       </div>
+      <audio id="bgMusic" loop>
+  <source src="A Whole New World - Aladdin - Violin cover by Daniel Jang.mp3" type="audio/mp3">
+</audio>
 
     </div>
   </section>
+      
+     
+    
 
   <audio id="bgMusic" loop>
     <source src="music/aladdin.mp3" type="audio/mp3">
   </audio>
+
+  <!-- =========================================================
+     MENSAJE DE LOS PADRES
+========================================================= -->
+
+<section class="parents-message">
+  <div class="parents-box glass">
+
+    <h2>Con Amor y Gratitud ✨</h2>
+
+    <p>
+      Con la bendición de Dios y llenos de profunda gratitud
+      por Su amor, fidelidad y misericordia,
+      celebramos con alegría los XV años
+      de nuestra querida hija.
+    </p>
+
+    <p>
+      Como padres,
+      <strong>PABLO y JAQUELINE</strong>
+      agradecemos al Señor por permitirnos llegar
+      a este momento tan especial en la vida de nuestra familia,
+      y deseamos compartir esta inmensa felicidad
+      contigo y tu apreciable familia.
+    </p>
+
+  </div>
+</section>
 
   <section class="countdown-section">
     <h2>Faltan</h2>
@@ -95,6 +122,37 @@
       </div>
     </div>
   </section>
+  <section class="event-details-section">
+    <div class="event-details-box glass">
+      <div class="tiara-container">
+        <img src="tiara.png" class="mini-tiara" alt="Tiara Dorada">
+      </div>
+      
+      <h3 class="month-title">JUNIO</h3>
+      
+      <div class="date-row">
+        <div class="date-side">SÁBADO</div>
+        <div class="date-main">27</div>
+        <div class="date-side">11:00 A.M.</div>
+      </div>
+      
+      <h3 class="year-title">2026</h3>
+      
+      <div class="location-box">
+       <a 
+  href="https://www.waze.com/es-419/live-map/directions" 
+  target="_blank" 
+  class="geo-icon"
+>
+  📍
+</a>
+        <p class="location-text">
+          <strong>Granja 77, Residencial San Jorge Yumar</strong><br>
+          Zona 6 de Mixco.
+        </p>
+      </div>
+    </div>
+  </section>
 
  <section class="timeline-section">
   <h2>Itinerario</h2>
@@ -104,26 +162,37 @@
 </section>
 
   <section class="dresscode">
-    <div class="dress-box glass">
-      <h2>Código de Vestimenta</h2>
-      <p class="formal">FORMAL</p>
-      <p>
-        Con mucho cariño, les pedimos evitar el color turquesa,
-        ya que está reservado especialmente para la Quinceañera.
-      </p>
-    </div>
-  </section>
+  <div class="dress-box glass">
 
-  <section class="qr-section">
-    <div class="qr-box glass">
-      <h2>Comparte tus recuerdos ✨</h2>
-      <p>
-        Escanea el código QR y comparte las fotos y videos de la celebración.
-      </p>
-      <img src="img/qr.png" alt="QR" class="qr">
-      <a href="#" class="upload-btn">Subir Fotos</a>
-    </div>
-  </section>
+    <h2>Código de Vestimenta</h2>
+
+    <p class="formal">FORMAL</p>
+
+    <img src="vestimenta.png"Atuendos sugeridos" class="dresscode-img">
+
+    <p class="dress-note">
+      Con mucho cariño, les pedimos evitar el color turquesa,
+      ya que está reservado especialmente para la Quinceañera.
+    </p>
+
+  </div>
+</section>
+
+  <section class="gift-section">
+  <div class="gift-box glass">
+
+    <h2>Lluvia de Sobres ✨</h2>
+
+    <p class="gift-text">
+      Tu presencia es el regalo más importante para nosotros.  
+      Pero si deseas tener un detalle especial conmigo,
+      agradeceré enormemente que sea en sobre. 💛
+    </p>
+
+  </div>
+</section>
+
+
 
   <section class="confirm">
     <div class="confirm-box glass">
@@ -134,6 +203,7 @@
 </a>
     </div>
   </section>
+  
 
   <footer>
     <p>Gracias por ser parte de este momento tan especial ✨</p>
